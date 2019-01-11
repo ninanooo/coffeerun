@@ -18,6 +18,7 @@
   CheckList.prototype.addClickHandler = function (fn) {
     this.$element.on('click', 'input', function(event) {
       var email = event.target.value;
+      console.log(email);
       this.removeRow(email);
       fn(email);
     }.bind(this));
@@ -40,7 +41,7 @@
 
   function Row(coffeeOrder) {
     var $div = $('<div></div>', {
-      'data-coffer-oder': 'checkbox',
+      'data-coffee-order': 'checkbox',
       'class':'checkbox'
     });
     var $label = $('<label></label>');
@@ -50,8 +51,8 @@
     });
     var description = coffeeOrder.size + ' ';
     if (coffeeOrder.flavor)
-      description += cofferOrder.flavor + ' ';
-    description += cofferOrder.coffee + ', ';
+      description += coffeeOrder.flavor + ' ';
+    description += coffeeOrder.coffee + ', ';
     description += ' (' + coffeeOrder.emailAddress + ')';
     description += ' [' + coffeeOrder.strength + 'x]';
 
