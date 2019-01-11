@@ -8,6 +8,7 @@
   var Truck = App.Truck;
   var DB = App.DB;
   var FormHandler = App.FormHandler;
+  var Validation = App.Validation;
   var CheckList = App.Check;
 
   //console.log(App);
@@ -22,4 +23,5 @@
     myTruck.createOrder.call(myTruck, data);
     checkList.addRow.call(checkList, data);
   });
+  formHandler.addInputHandler(Validation.isCompanyEmail);
 })(window);
