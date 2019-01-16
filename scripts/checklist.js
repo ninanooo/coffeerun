@@ -19,8 +19,10 @@
     this.$element.on('click', 'input', function(event) {
       var email = event.target.value;
       console.log(email);
-      this.removeRow(email);
-      fn(email);
+      fn(email).
+        then(function () {
+          this.removeRow(email);
+        }.bind(this));
     }.bind(this));
   };
 
